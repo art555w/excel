@@ -13,7 +13,8 @@
 		"comma-dangle": "off",
 		"arrow-parens": "off",
 		"eol-last": "off",
-		"object-curly-spacing": "off"
+		"object-curly-spacing": "off",
+		"max-len": "off"
 	},
 	"extends": [
 		"eslint:recommended",
