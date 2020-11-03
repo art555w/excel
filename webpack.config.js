@@ -4,7 +4,6 @@ const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
@@ -15,7 +14,8 @@ const jsLoader = () => {
 		{
 			loader: 'babel-loader',
 			options: {
-				presets: ['@babel/preset-env']
+				presets: ['@babel/preset-env'],
+				plugins: ['@babel/plugin-proposal-class-properties']
 			}
 		}
 	]
@@ -48,7 +48,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './index.html',
+			template: 'index.html',
 			minify: {
 				removeComments: isProd,
 				collapseWhitespace: isProd
